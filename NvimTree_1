@@ -1,0 +1,19 @@
+reed_website
+  reed_site
+  web123
+    node_modules
+    public
+    src
+      assets
+       App.css
+       App.jsx
+       index.css
+       main.jsx
+     .DS_Store
+     .eslintrc.cjs
+     index.html
+     NvimTree_1
+     package-lock.json
+     package.json
+     vite.config.js
+   .DS_Store
