@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './PostPreview.css'
 
 const PostPreview = ({ post }) => {
 
@@ -8,24 +9,24 @@ const PostPreview = ({ post }) => {
         return <div>Post not found!</div>;
     }
 
-    const { title, user, topics, summary, date } = post;
+    const { title, user, topics, summary, date, id } = post;
 
     return (
-        <div className="post">
-            <div>
+        <div className="postpreview">
+            <div className="post-preview-header">
                 <div>{user}</div>
                 <div>{date}</div>
             </div>
-            <h2>{title}</h2>
+            <h2><Link to={`/post/${id}`}>{title}</Link></h2>
             <p>{summary}</p>
-            <div>
+            <div className="post-preview-footer">
                 <div>
-                    <div>{topics[0]}</div>
+                    <div className="post-topic">{topics[0]}</div>
                     <div>8 minute read</div>
                 </div>
                 <div>
-                    <div>{topics[0]}</div>
-                    <div>8 minute read</div>
+                    <div>button</div>
+                    <div>button</div>
                 </div>
             </div>
         </div>

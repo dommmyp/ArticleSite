@@ -7,21 +7,21 @@ import PostList from './components/PostList';
 import Post from './components/Post'; // Import the Post component for individual post pages
 import Footer from './components/Footer';
 import SidebarMini from './components/SidebarMini';
+import CreatePost from './components/CreatePost'
 import './styles.css';
 
 const App = () => {
     const [showSidebar, setShowSidebar] = useState(false);
-
     // Sample data for posts (replace this with actual data fetched from API or database)
     const posts = [
         {
             id: 1,
             title: 'Post 1',
-            content: 'Content for post 1',
+            content: 'CContent for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1Content for post 1ontent for post 1',
             user: 'John Doe',
             userID: '255635242',
             topics: ['Math', 'Science'],
-            summary: 'Summary for post 3',
+            summary: 'Summary for post 3Summary for post 3Summary for post 3Summary for post 3Summary for post 3Summary for post 3Summary for post 3Summary for post 3Summary for post 3',
             date: 'Jan 5, 2023',
         },
         {
@@ -58,6 +58,8 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<PostList posts={posts} />} />
                     <Route path="/post/:id" element={<Post posts={posts} />} />
+                    <Route path="/create-post" element={<CreatePost />} />
+
                 </Routes>
             </div>
             <Footer />

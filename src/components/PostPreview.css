@@ -1,0 +1,29 @@
+.postpreview{
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+   padding: 20px 30px 10px; 
+}
+.postpreview div{
+    display: flex;
+    gap: 10px;
+}
+.post-topic {
+    background: #444;
+    padding: 5px 10px;
+    border-radius: 20px;
+    height: 30px;
+    box-sizing: border-box;
+    line-height: 20px;
+}
+.post-preview-footer{
+    font-size: 14px;
+    box-sizing: border-box;
+    line-height: 30px;
+    justify-content: space-between;
+    color: #bbb;
+}
+.post-preview-header{
+    color: #bbb;
+}
+.postpreview h2 a{
+  text-decoration: none;
+}
