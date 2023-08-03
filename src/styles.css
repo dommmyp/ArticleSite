@@ -6,13 +6,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 #root{
-  background-color: #030303;
-  color: #f1f1f1;
+  /* background-color: #030303; */
+  /* color: #f1f1f1; */
+    background-color: white;
+    color: rgb(15,15,15);
   min-height: 100vh;
 }
 
 a{
-    color: #f1f1f1;
+    color: #111;
 }
 li a{
     display: block;
@@ -22,7 +24,7 @@ li a{
 .post-header{
     display: flex;
     padding-left: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(0,0,0,0.3);
     box-sizing: border-box;
 }
 .post-header div{
@@ -31,7 +33,7 @@ li a{
   box-sizing: border-box;
 }
 .post-header div:hover{
-    box-shadow: rgba(255,255,255, 0.6) 0px 1px 0px 0px;
+    box-shadow: rgba(0,0,0, 0.6) 0px 1px 0px 0px;
     cursor: pointer;
 }
 
@@ -56,7 +58,7 @@ li a{
 
 /* Styling for individual posts */
 .post {
-  border-bottom: 1px solid white; /* Add a border */
+  border-bottom: 1px solid black; /* Add a border */
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -79,7 +81,7 @@ li a{
 /* User information in the post */
 .post-user {
   font-size: 14px;
-  color: #777777;
+  color: #555;
   margin-top: 10px;
 }
 

@@ -1,0 +1,16 @@
+.quill{
+    background: white;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.textField{
+    width: 80%;
+    margin: 20px auto;
+}
+.ql-toolbar, .ql-container{
+    border: unset!important;
+}
+.ql-toolbar{
+    border-bottom: 1px solid #ccc !important;
+}

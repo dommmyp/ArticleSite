@@ -1,36 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-const Post = ({ posts }) => {
+const Post = () => {
+    const [post, setPost] = useState(null)
     const { id } = useParams();
     const postId = parseInt(id);
-    const post = posts.find(post => post.id === postId);
+    useEffect(() => {
+        getPost();
+    }, [])
 
-    if (!post) {
-        return <div>Post not found!</div>;
+    const getPost = async () => {
+
+        await fetch(`http://localhost:3000/post`, {
+            method: 'post',
+            body: JSON.stringify({
+                id: id
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                setPost(data.post)
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
     }
 
-    const { title, user, topics, summary, date } = post;
-
     return (
-        <div className="post">
-            <div>
-                <div>{user}</div>
-                <div>{date}</div>
-            </div>
-            <h2>{title}</h2>
-            <p>{summary}</p>
-            <div>
-                <div>
-                    <div>{topics[0]}</div>
-                    <div>8 minute read</div>
+        <>
+            {post &&
+                <div className="post">
+                    <div>
+                        <div>{post.user}</div>
+                        <div>{post.date}</div>
+                    </div>
+                    <h2>{post.title}</h2>
+                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
                 </div>
-                <div>
-                    <div>{topics[0]}</div>
-                    <div>8 minute read</div>
-                </div>
-            </div>
-        </div>
+            }
+        </>
     );
 };
 

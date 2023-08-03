@@ -8,6 +8,7 @@ import Post from './components/Post'; // Import the Post component for individua
 import Footer from './components/Footer';
 import SidebarMini from './components/SidebarMini';
 import CreatePost from './components/CreatePost'
+import TextField from './components/TextField'
 import './styles.css';
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
         // Add more posts here
     ];
 
+
     return (
         <Router>
             <Navbar toggleSidebar={() => setShowSidebar(!showSidebar)} />
@@ -58,7 +60,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<PostList posts={posts} />} />
                     <Route path="/post/:id" element={<Post posts={posts} />} />
-                    <Route path="/create-post" element={<CreatePost />} />
+                    <Route path="/create-post" element={<TextField />} />
 
                 </Routes>
             </div>
